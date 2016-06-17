@@ -16,7 +16,24 @@ class MicropostsController < ApplicationController
   end
 
   def show
-    @microposts = micropost(micropost_params)
+    #params[:id] message id
+    @micropost = Micropost.find(params[:id])
+#    @microposts = Micropost.order("created_at desc")
+  end
+
+
+  def edit
+    @micropost = Micropost.find(params[:id])
+  end
+
+  def update
+    @micropost = Micropost.find(params[:id])
+    if @micropost.update_attributes(micropost_params)
+      flash[:success] = "Success to edit event details"
+      redirect_to @micropost
+    else
+      render 'edit'
+    end
   end
 
   private

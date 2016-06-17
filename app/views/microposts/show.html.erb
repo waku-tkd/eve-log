@@ -1,10 +1,16 @@
-<% @micropost.each do |micropost| %> 
-  <%= micropost.id %>
+<div class="col-md-8">
+  <h1>
+  <%= @micropost.title  %>
+  </h1>
   <br>
-  <%= micropost.title %>
+  <h3>
+  開催場所:
+  <%= @micropost.location  %>
   <br>
-  <%= micropost.budget %>
+  参加人数:
+  <%= @micropost.headcount  %>
   <br>
-  <%= micropost.headcount %>
-  <br>
-<% end %>
+  費用(合計):
+  <%= @micropost.budget * @micropost.headcount %>
+  </h3>
+</div>

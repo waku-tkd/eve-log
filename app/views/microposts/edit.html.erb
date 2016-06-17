@@ -1,9 +1,9 @@
 <% provide(:title, "Edit user") %>
-<h1>Update your profile</h1>
+<h1>Update event details</h1>
 
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
-    <%= form_for(@user) do |f| %>
+    <%= form_for(@micropost) do |f| %>
       <%= render 'shared/error_messages', object: f.object %>
 
       <%= f.label :タイトル %>
